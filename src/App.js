@@ -1,15 +1,11 @@
 import React from 'react';
 
-import {Auth, Profile} from "./pages";
+import { AppRoute } from "./routes";
 
 
 function App() {
-  return (
-    <div>
-      <Auth />
-      <Profile />
-    </div>
-  );
+
+  return <AppRoute />
 }
 
 export default App;
