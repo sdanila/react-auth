@@ -38,5 +38,12 @@
     height: 35px;
     border: none;
     margin: 0 auto;
+    cursor: pointer;
+    &:disabled {
+      cursor: default;
+      background: #a5a5a5;
+      color: white;
+      opacity: 0.6;
+    }
   }
 }

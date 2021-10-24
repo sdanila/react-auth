@@ -12,10 +12,12 @@ const Form = () => {
 
   const { userEmail } = useSelector(loginSelector);
 
+  const disabledButton = !(emailValue === userEmail && passwordValue === '123456');
+
   return (
     <form className='form'>
       <input
-        type="email"
+        type="text"
         value={emailValue}
         onChange={(e) => setEmailValue(e.target.value)}
         className="form__input"
@@ -28,7 +30,11 @@ const Form = () => {
         className="form__input"
         placeholder='password'
       />
-      <button className='form__button'>Sign in</button>
+      {
+        disabledButton
+          ? <button className='form__button' disabled>Sign in</button>
+          : <button type='submit' className='form__button'>Sign in</button>
+      }
     </form>
   );
 };
