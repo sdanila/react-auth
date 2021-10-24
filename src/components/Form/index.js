@@ -1,10 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { useSelector } from "react-redux";
+
+import { loginSelector } from "../../redux/selectors";
 
 import './Form.scss';
+
 
 const Form = () => {
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
+
+  const { userEmail } = useSelector(loginSelector);
 
   return (
     <form className='form'>
